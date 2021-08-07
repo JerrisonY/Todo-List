@@ -112,6 +112,103 @@ body {
 
 
 /* *******************
+** Modal Styles **
+******************* */
+
+.modal-container {
+    position: fixed;
+    width: 100%;
+    height: 80%;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    /* padding: 25px; */
+
+    background-color: #fff;
+    border: solid 1px lightgray;
+    border-radius: 0.6em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 10px;
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-times {
+    opacity: 0.5;
+}
+
+.modal-inner-container {
+    display: flex;
+    padding: 15px 25px 0 25px;
+    width: 100%;
+    height: 100%;
+}
+
+.inner-item-two {
+    width: 70%;
+}
+
+.inner-item-one {
+    width: 100%;
+    padding: 0 25px 0 0;
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+    outline: none;
+    border: solid 1px lightgray;
+    padding: 3px 7px 3px 7px;
+    margin: 5px 1px 18px 0px;
+    transition: 0.1s;
+    border-radius: 0.3em;
+
+    width: 100%;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+    box-shadow: 0 0 5px rgba(219, 76, 63, 1);
+}
+
+input[type="date"] {
+    margin: 5px 1px 12px 0;
+}
+
+.modal-close {
+    outline: none;
+    border: solid 1px gray;
+    background-color: #fff;
+    color: gray;
+    padding: 5px 10px;
+    border-radius: 0.3em;
+}
+
+.modal-add {
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 0.3em;
+    background-color: #DB4C3F;
+}
+
+/* *******************
 ** Main Container Styles **
 ******************* */
 
@@ -129,3 +226,16 @@ body {
     display: none;
 }
 
+.add-task {
+    opacity: 0.6;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.add-task:hover {
+    opacity: 1;
+}
+
+.fa-plus {
+    padding-right: 8px;
+}

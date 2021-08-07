@@ -28,17 +28,66 @@
                 <span id="projects" class="inactive-font"><i class="fas fa-tasks"></i>Projects &#8679;</span>
             </aside>
 
+            <section class="modal-container">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3>New Task</h3>
+                        <i class="fas fa-times fa-sm"></i>
+                    </div>
+                    <div class="modal-inner-container">
+                        <div class="inner-item-one">
+                            <p>Title:</p>
+                            <input type="text">
+                            <p>Description:</p>
+                            <textarea name="description" id="" rows="6"></textarea>
+                        </div>
+                        <div class="inner-item-two">
+                            <p>Due Date:</p>
+                            <input type="date">
+                            <p>Priority:</p>
+                            <select name="Priority" id="priority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+
+                            <div>
+                                <button class="modal-close">Close</button>
+                                <button class="modal-add">Add Task</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="inbox-container container">
                 <h1>Inbox</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="inbox-task-container">
+
+                </div>
+                <div class="add-task">
+                    <span><i class="fas fa-plus"></i> Add Task</span>
+                </div>
             </section>
 
             <section class="today-container container inactive">
                 <h1>Today</h1>
+                <div class="today-task-container">
+                    
+                </div>
+                <div class="add-task">
+                    <span><i class="fas fa-plus"></i> Add Task</span>
+                </div>
             </section>
 
             <section class="projects-container container inactive"> 
                 <h1>Projects</h1>
+                <div class="projects-task-container">
+                    
+                </div>
+                <div class="add-task">
+                    <span><i class="fas fa-plus"></i> Add Task</span>
+                </div>
             </section>
         </main>
         <!-- <script src="./dist/bundle.js"></script> -->
