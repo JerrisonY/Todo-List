@@ -109,8 +109,10 @@ let createTaskObject = () => {
         inboxTaskContainer.append(newTaskContainer);
     } else if (!todayContainer.classList.contains('inactive')) {
         todayTaskContainer.append(newTaskContainer);
+        inboxTaskContainer.append(newTaskContainer.cloneNode(true));
     } else {
         projectsTaskContainer.append(newTaskContainer);
+        inboxTaskContainer.append(newTaskContainer.cloneNode(true));
     }
 }
 

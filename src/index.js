@@ -1,12 +1,20 @@
 import { inboxActive, todayActive, projectsActive, homeActive } from './active.js'
-import { createTaskObject, generateValues  } from './newTask.js';
+import { createTaskObject } from './newTask.js';
+import { darkMode } from './darkMode.js';
+import { checked } from './check.js';
+import { createNumberText, updateNumber } from './trackingProject.js';
 
+
+// run createNumberText right away to append the span, will run and update per action of user
+createNumberText();
+updateNumber()
+
+// Runs through all container styles and toggle style for sidebar transform
 const menuIcon = document.querySelector('.fa-bars');
 const homeIcon = document.querySelector('.fa-home');
 const sideBar = document.querySelector('.sidebar');
 const mainContainer = document.querySelectorAll('.container')
 
-// Runs through all container styles and toggle style for sidebar transform
 menuIcon.addEventListener('click', () => {
     sideBar.classList.toggle('sidebar-active')    
     // classlist only works with single elements (queryselectorall is multiple elements)
@@ -58,6 +66,8 @@ let newTaskContainer;
 
 addTaskButton.addEventListener('click', () => {
     createTaskObject()
+    updateNumber()
+
     // have to redefine trash everytime you create a new task to keep the array updated
     deleteTask = document.querySelectorAll('.fa-trash-alt');
 
@@ -65,6 +75,7 @@ addTaskButton.addEventListener('click', () => {
     deleteTask.forEach(task => {
         task.addEventListener('click', (e) => {
            e.target.parentNode.parentNode.remove()
+           updateNumber()
         })
     })
 
@@ -78,6 +89,15 @@ addTaskButton.addEventListener('click', () => {
             }
         })
     })
+
+    // Checkbox event lisener
+    let checkbox = document.querySelectorAll('input[type=checkbox]')
+
+    checkbox.forEach(task => {
+        task.addEventListener('change', () => {
+            checked()
+        })
+    });
 }) 
 
 
@@ -92,5 +112,11 @@ const modalClose = document.querySelector('.modal-close');
 })
 
 
+// dark mode
+const darkModeBtn = document.querySelector('.fa-moon');
+
+darkModeBtn.addEventListener('click', () => {
+    darkMode();
+})
 // questions for Shiranka - How to append an element in Inbox and another location as well
 // how to get innerDescription to toggleactive
