@@ -71,7 +71,7 @@ body {
 }
 
 .sidebar span {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 500;
     padding: 10px;
     transition: 0.2s;
@@ -118,25 +118,28 @@ body {
 .modal-container {
     position: fixed;
     width: 100%;
-    height: 80%;
+    height: 100%;
     z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
     width: 100%;
     max-width: 600px;
     height: 300px;
-    /* padding: 25px; */
-
+    
+    margin-bottom: 20%;
     background-color: #fff;
     border: solid 1px lightgray;
     border-radius: 0.6em;
 
     display: flex;
     flex-direction: column;
+
+    transition: 0.5s;
 }
 
 .modal-header {
@@ -149,6 +152,7 @@ body {
 
 .fa-times {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .modal-inner-container {
@@ -158,13 +162,13 @@ body {
     height: 100%;
 }
 
-.inner-item-two {
-    width: 70%;
-}
-
 .inner-item-one {
     width: 100%;
     padding: 0 25px 0 0;
+}
+
+.inner-item-two {
+    width: 70%;
 }
 
 .modal input,
@@ -190,22 +194,37 @@ input[type="date"] {
     margin: 5px 1px 12px 0;
 }
 
+.modal-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 33px;
+}
+
 .modal-close {
     outline: none;
     border: solid 1px gray;
     background-color: #fff;
     color: gray;
-    padding: 5px 10px;
+    padding: 7px 12px;
+    margin-right: 10px;
     border-radius: 0.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background-color: gray;
+    color: #fff;
 }
 
 .modal-add {
     outline: none;
     border: none;
     color: #fff;
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 0.3em;
     background-color: #DB4C3F;
+    cursor: pointer;
 }
 
 /* *******************
@@ -220,13 +239,15 @@ input[type="date"] {
 
 .container-active {
     margin-left: 160px;
+    padding-right: 160px;
 }
 
 .inactive {
-    display: none;
+    display: none !important;
 }
 
 .add-task {
+    padding: 10px 0;
     opacity: 0.6;
     transition: 0.2s;
     cursor: pointer;
@@ -238,4 +259,105 @@ input[type="date"] {
 
 .fa-plus {
     padding-right: 8px;
+}
+
+
+/* *******************
+** New Task Container Styles **
+******************* */
+
+.newTaskContainer {
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: solid 1px lightgray;
+}
+
+.newTaskContainer input[type="checkbox"] {
+    margin-right: 20px;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.firstContainer {
+    display: flex;
+    align-items: center;
+    /* cursor: pointer; */
+}
+
+.firstContainer p {
+    cursor: pointer;
+}
+
+.secondContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* cursor: pointer; */
+}
+
+.secondContainer i {
+    padding: 0 6px;
+}
+
+.secondContainer p {
+    padding-right: 25px;
+}
+
+.fa-trash-alt {
+    opacity: 0.6;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+}
+
+.flag-low {
+    color: #4073D6;
+}
+
+.flag-medium {
+    color: #F49C17;
+}
+
+.flag-high {
+    color: #DE4D4A;
+}
+
+.innerContainer {
+    grid-column: 1/3;
+    display: flex;
+    border: solid 1px lightgray;
+    border-radius: 0.2em;
+    margin: 10px 0 0 0;
+    padding: 0 13px;
+    font-size: 0.88em;
+}
+
+.innerFirst {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.innerSecond {
+    display: flex;
+    flex-direction: column;
+}
+
+.strong {
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.regular {
+    font-weight: 400;
+    padding-left: 7px;
 }

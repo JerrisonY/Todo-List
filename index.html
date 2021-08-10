@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> </title>
+        <title>To-Do List</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
@@ -27,8 +27,7 @@
                 <span id="today" class="inactive-font"><i class="far fa-calendar-check"></i>Today</span>
                 <span id="projects" class="inactive-font"><i class="fas fa-tasks"></i>Projects &#8679;</span>
             </aside>
-
-            <section class="modal-container">
+            <section class="modal-container inactive">
                 <div class="modal">
                     <div class="modal-header">
                         <h3>New Task</h3>
@@ -37,13 +36,13 @@
                     <div class="modal-inner-container">
                         <div class="inner-item-one">
                             <p>Title:</p>
-                            <input type="text">
+                            <input class="title" type="text">
                             <p>Description:</p>
-                            <textarea name="description" id="" rows="6"></textarea>
+                            <textarea class="description" name="description" id="" rows="6"></textarea>
                         </div>
                         <div class="inner-item-two">
                             <p>Due Date:</p>
-                            <input type="date">
+                            <input class="date" type="date">
                             <p>Priority:</p>
                             <select name="Priority" id="priority">
                                 <option value="low">Low</option>
@@ -51,7 +50,7 @@
                                 <option value="high">High</option>
                             </select>
 
-                            <div>
+                            <div class="modal-btns">
                                 <button class="modal-close">Close</button>
                                 <button class="modal-add">Add Task</button>
                             </div>
