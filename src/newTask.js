@@ -6,6 +6,8 @@ const inboxTaskContainer = document.querySelector('.inbox-task-container');
 const todayTaskContainer = document.querySelector('.today-task-container');
 const projectsTaskContainer = document.querySelector('.projects-task-container');
 
+const modal = document.querySelector('.modal-container');
+
 let newValues;
 
 
@@ -114,6 +116,14 @@ let createTaskObject = () => {
         projectsTaskContainer.append(newTaskContainer);
         inboxTaskContainer.append(newTaskContainer.cloneNode(true));
     }
+    
+
+    // resets values and hides modal
+    titleValue = document.querySelector('.title').value = '';
+    descriptionValue = document.querySelector('.description').value = '';
+    dateValue = document.querySelector('.date').value = '';
+    // priorityValue = document.querySelector('#priority').value = 'Low';
+    modal.classList.add('inactive')
 }
 
 
