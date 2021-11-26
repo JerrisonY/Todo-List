@@ -1,8 +1,8 @@
-import { inboxActive, todayActive, projectsActive, homeActive } from "./active";
-import { createTaskObject } from "./newTask";
-import { darkMode } from "./darkMode";
-import { checked } from "./check";
-import { createNumberText, updateNumber } from "./trackingProject";
+import { inboxActive, todayActive, projectsActive, homeActive } from "./active.js";
+import { createTaskObject } from "./newTask.js";
+import { darkMode } from "./darkMode.js";
+import { checked } from "./check.js";
+import { createNumberText, updateNumber } from "./trackingProject.js";
 
 // run createNumberText right away to append the span, will run and update per action of user
 createNumberText();
@@ -117,8 +117,3 @@ darkModeBtn.addEventListener("click", () => {
 });
 // questions for Shiranka - How to append an element in Inbox and another location as well
 // how to get innerDescription to toggleactive
-
-
-let darkMode3 = () => {
-    console.log('test') console.log('hi')
-}
